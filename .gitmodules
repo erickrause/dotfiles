@@ -34,6 +34,9 @@
 [submodule "vimbundles/snipmate.vim"]
 	path = vimbundles/snipmate.vim
 	url = git://github.com/msanders/snipmate.vim.git
+[submodule "vimbundles/vim-vividchalk"]
+  path = vimbundles/vim-vividchalk
+  url = git://github.com/tpope/vim-vividchalk.git
 [submodule "emacs.d"]
 	path = emacs.d
 	url = git://github.com/technomancy/emacs-starter-kit.git
