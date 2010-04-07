@@ -6,8 +6,8 @@ Since modified to suit my needs
 Installation
 ------------
 
-	git clone git:/github.com/jschoolcraft/dotfiles/ ~/.dotfiles
-	cd ~/.dotfiles
+	git clone git:/github.com/ekrause/dotfiles/ ~/.dotfiles
+	cd .dotfiles
 	rake install
 	# edit ~/.gitconfig and personalize it
 
@@ -74,3 +74,12 @@ I've installed this enough times that it's a pain in the ass to redo, so I'm kee
 
 	ln -sf ~/code/dotfiles/TextMate/Bundles ~/Library/Application\ Support/TextMate/Bundles
 
+If you already have some bundles in ~/Library/Application\ Support/Textmate/ then you'll need to rm -rf them.
+
+Let's get them ready to use:
+
+	git submodule update --init
+	
+You can also reload them:
+
+	osascript -e 'tell app "TextMate" to reload bundles'
