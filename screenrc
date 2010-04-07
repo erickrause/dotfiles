@@ -1,0 +1,9 @@
+screen -t Irssi irssi
+
+vbell off
+#defflow off
+autodetach on
+defscrollback 1000000
+startup_message off
+caption always "%{= ok}%-Lw%{= bW}%50> %n%f* %t %{-}%+Lw%< %= %{= wk} %H %{= bW} %l %{= wk} %0c:%s %d/%m %{-}"
+shell -$SHELL

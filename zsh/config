@@ -8,13 +8,12 @@
 autoload -U colors
 colors
 
-export EDITOR='mate -w'
-export PATH="~/bin:/opt/local/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:$PATH"
-export MANPATH="/opt/loca/share/man:/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
+export EDITOR='vim'
+export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH"
+export MANPATH="/usr/local/man:/usr/local/git/man:$MANPATH"
 export AUTOFEATURE='true'
 export RSPEC='true'
 export CLICOLOR=1
-export ARCHFLAGS="-arch i386"
 fpath=(~/.zsh/functions $fpath)
 
 autoload -U ~/.zsh/functions/*(:t)
@@ -41,15 +40,43 @@ setopt INC_APPEND_HISTORY SHARE_HISTORY  # adds history incrementally and share 
 setopt HIST_IGNORE_ALL_DUPS  # don't record dupes in history
 setopt HIST_REDUCE_BLANKS
 
-zle -N newtab
+# Automatically remove duplicates from these arrays
+typeset -U path cdpath fpath manpath
 
-bindkey '^[^[[D' backward-word
-bindkey '^[^[[C' forward-word
-bindkey '^[[5D' beginning-of-line
-bindkey '^[[5C' end-of-line
-bindkey '^[[3~' delete-char
-bindkey '^[^N' newtab
-bindkey '^?' backward-delete-char 
+# Keybindings
+bindkey "^@" undefined-key
+bindkey '^A' beginning-of-line
+bindkey "^B" self-insert
+bindkey "^C" undefined-key
+bindkey "^D" list-choices
+bindkey '^E' end-of-line
+bindkey "^H" vi-backward-delete-char
+bindkey "^I" expand-or-complete
+bindkey "^J" accept-line
+bindkey "^K" kill-line
+bindkey "^L" clear-screen
+bindkey "^M" accept-line
+bindkey "^R" redisplay
+bindkey "^U" vi-kill-line
+bindkey "^V" quoted-insert
+bindkey "^W" vi-backward-kill-word
+bindkey "\e" prefix
+bindkey "^?" backward-delete-char
+bindkey "\e" vi-cmd-mode
+bindkey "\e[A" up-line-or-history
+bindkey "\e[B" down-line-or-history
+bindkey "\e[C" forward-char
+bindkey "\e[D" backward-char
+
+# zle -N newtab
+#
+# bindkey '^[^[[D' backward-word
+# bindkey '^[^[[C' forward-word
+# bindkey '^[[5D' beginning-of-line
+# bindkey '^[[5C' end-of-line
+# bindkey '^[[3~' delete-char
+# bindkey '^[^N' newtab
+# bindkey '^?' backward-delete-char
 
 # Set a nice git-prompt (calls git_status())
 git_prompt_info() {
