@@ -9,7 +9,7 @@ autoload -U colors
 colors
 
 export EDITOR='vim'
-export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH"
+export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:/Library/PostgreSQL/8.4/bin/:$PATH"
 export MANPATH="/usr/local/man:/usr/local/git/man:$MANPATH"
 export AUTOFEATURE='true'
 export RSPEC='true'
