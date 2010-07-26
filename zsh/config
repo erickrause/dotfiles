@@ -107,5 +107,14 @@ git_status() {
   echo $output
 }
 
+rvm_version() {
+  local gemset=$(echo $GEM_HOME | awk -F'@' '{print $2}')
+  [ "$gemset" != "" ] && gemset="@$gemset"
+  local version=$(echo $MY_RUBY_HOME | awk -F'\/' '{print $NF}' | awk -F'-' '($2 != "") {print $1 "-" $2}')
+  [ "$version" != "" ] && version="$version"
+  local full="$version$gemset"
+  [ "$full" != "" ] && echo "$full"
+}
+
 # prompt
-export PS1='$(git_prompt_info)[${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}%{$fg_bold[blue]%}%~%{$reset_color%}] '
+export PS1='$(git_prompt_info)[$(rvm_version)][${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}%{$fg_bold[blue]%}%~%{$reset_color%}] '

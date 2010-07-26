@@ -52,9 +52,6 @@
 [submodule "TextMate/Bundles/Git.tmbundle"]
 	path = TextMate/Bundles/Git.tmbundle
 	url = git://github.com/jcf/git-tmbundle
-[submodule "TextMate/Bundles/Cucumber.tmbundle"]
-	path = TextMate/Bundles/Cucumber.tmbundle
-	url = git://github.com/aslakhellesoy/cucumber-tmbundle.git
 [submodule "TextMate/Bundles/RSpec.tmbundle"]
 	path = TextMate/Bundles/RSpec.tmbundle
 	url = git://github.com/dchelimsky/rspec-tmbundle.git
