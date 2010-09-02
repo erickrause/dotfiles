@@ -79,6 +79,32 @@ bindkey "\e[D" backward-char
 # bindkey '^[^N' newtab
 # bindkey '^?' backward-delete-char
 
+ss() {
+  clear
+  if [ -e script/rails ]; then
+    script/rails server $@
+  else
+    script/server $@
+  fi
+}
+
+sc() {
+  if [ -e script/rails ]; then
+    script/rails console $@
+  else
+    script/console $@
+  fi
+}
+
+sg() {
+  if [ -e script/rails ]; then
+    script/rails generate $@
+  else
+    script/generate $@
+  fi
+}
+
+
 # Set a nice git-prompt (calls git_status())
 git_prompt_info() {
   local git_dir ref br;
